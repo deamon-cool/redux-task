@@ -43,4 +43,17 @@ class Persons extends Component {
     }
 }
 
-export default Persons;
+const mapStateToProps = state => {
+    return {
+        persons: state.persons
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addPersonHandler: () => dispatch({ type: actionTypes.ADD }),
+        deletePersonHandler: () => dispatch({ type: actionTypes.DELETE })
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Persons);
