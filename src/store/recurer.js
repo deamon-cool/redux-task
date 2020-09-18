@@ -4,7 +4,7 @@ const initState = {
     persons: []
 };
 
-const reducer = (state, action) => {
+const reducer = (state = initState, action) => {
     switch (action.type) {
         case actionTypes.ADD:
             return null;
