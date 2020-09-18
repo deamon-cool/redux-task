@@ -14,20 +14,20 @@ class Persons extends Component {
         const newPerson = {
             id: Math.random(), // not really unique but good enough here!
             name: 'Daemon',
-            age: Math.floor( Math.random() * 30 )
+            age: Math.floor(Math.random() * 30)
         }
-        this.setState( ( prevState ) => {
-            return { persons: prevState.persons.concat(newPerson)}
-        } );
+        this.setState((prevState) => {
+            return { persons: prevState.persons.concat(newPerson) }
+        });
     }
 
     personDeletedHandler = (personId) => {
-        this.setState( ( prevState ) => {
-            return { persons: prevState.persons.filter(person => person.id !== personId)}
-        } );
+        this.setState((prevState) => {
+            return { persons: prevState.persons.filter(person => person.id !== personId) }
+        });
     }
 
-    render () {
+    render() {
         return (
             <div>
                 <AddPerson personAdded={this.personAddedHandler} />
@@ -36,7 +36,7 @@ class Persons extends Component {
                         key={person.id}
                         name={person.name}
                         age={person.age}
-                        clicked={() => this.personDeletedHandler(person.id)}/>
+                        clicked={() => this.personDeletedHandler(person.id)} />
                 ))}
             </div>
         );
