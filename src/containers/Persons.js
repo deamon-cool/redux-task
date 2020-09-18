@@ -28,15 +28,17 @@ class Persons extends Component {
     }
 
     render() {
+        const randomAge = Math.random() * 30;
+
         return (
             <div>
-                <AddPerson personAdded={this.personAddedHandler} />
+                <AddPerson personAdded={() => this.props.addPersonHandler(randomAge)} />
                 {this.state.persons.map(person => (
                     <Person
                         key={person.id}
                         name={person.name}
                         age={person.age}
-                        clicked={() => this.personDeletedHandler(person.id)} />
+                        clicked={() => this.props.deletePersonHandler(person.id)} />
                 ))}
             </div>
         );
@@ -51,8 +53,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addPersonHandler: () => dispatch({ type: actionTypes.ADD }),
-        deletePersonHandler: () => dispatch({ type: actionTypes.DELETE })
+        addPersonHandler: (age) => dispatch({ type: actionTypes.ADD, age: age }),
+        deletePersonHandler: (id) => dispatch({ type: actionTypes.DELETE, id: id })
     }
 };
 
