@@ -28,7 +28,7 @@ class Persons extends Component {
     }
 
     render() {
-        const randomAge = Math.random() * 30;
+        const randomAge = Math.floor(Math.random() * 30);
 
         return (
             <div>
