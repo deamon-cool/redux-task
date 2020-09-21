@@ -15,7 +15,10 @@ const reducer = (state = initState, action) => {
 
             return { persons: [...state.persons, newPerson] };
         case actionTypes.DELETE:
-            return null;
+            const person = state.persons.filter(p => p.id === action.id);
+            const index = state.persons.indexOf(person[0]);
+
+            return { persons: state.persons.slice(0, index).concat(state.persons.slice(index + 1)) };
         default:
             return state;
     }
