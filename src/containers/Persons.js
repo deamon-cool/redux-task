@@ -33,7 +33,7 @@ class Persons extends Component {
         return (
             <div>
                 <AddPerson personAdded={() => this.props.addPersonHandler(randomAge)} />
-                {this.state.persons.map(person => (
+                {this.props.persons.map(person => (
                     <Person
                         key={person.id}
                         name={person.name}
