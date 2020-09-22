@@ -5,7 +5,7 @@ import './AddPerson.css';
 class AddPerson extends React.Component {
     state = {
         name: '',
-        age: null
+        age: ''
     };
 
     nameChangedHandler = (e) => {
