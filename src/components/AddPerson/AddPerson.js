@@ -2,12 +2,20 @@ import React from 'react';
 
 import './AddPerson.css';
 
-const addPerson = (props) => (
-    <div className="AddPerson">
-        <input type='text' placeholder='Name' />
-        <input type='number' placeholder='Age' />
-        <button onClick={props.personAdded}>Add Person</button>
-    </div>
-);
+class AddPerson extends React.Component {
+    state = {
 
-export default addPerson;
+    };
+
+    render() {
+        return (
+            <div className="AddPerson">
+                <input type='text' placeholder='Name' />
+                <input type='number' placeholder='Age' />
+                <button onClick={this.props.personAdded}>Add Person</button>
+            </div>
+        );
+    }
+}
+
+export default AddPerson;
