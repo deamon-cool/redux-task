@@ -19,8 +19,15 @@ class AddPerson extends React.Component {
     render() {
         return (
             <div className="AddPerson">
-                <input type='text' placeholder='Name' onChange={this.nameChangedHandler} />
-                <input type='number' placeholder='Age' onChange={this.ageChangeHandler} />
+                <input type='text'
+                    placeholder='Name'
+                    onChange={this.nameChangedHandler}
+                    value={this.state.name} />
+                <input
+                    type='number'
+                    placeholder='Age'
+                    onChange={this.ageChangeHandler}
+                    value={this.state.age} />
                 <button onClick={this.props.personAdded}>Add Person</button>
             </div>
         );
